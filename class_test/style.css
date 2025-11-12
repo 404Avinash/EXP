@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #cfcfcf; /* grey background */
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.product-card {
+  background-color: white;
+  border: 2px solid red; /* red border as per question */
+  border-radius: 8px;
+  width: 280px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: darkblue;
+}
