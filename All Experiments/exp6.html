@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My E-commerce Store</title>
+  <style>
+    /* Page */
+    :root{
+      --bg: #dcdcdc;
+      --card-bg: #fff;
+      --accent: #062bd9; /* button blue */
+      --price: #c62828;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* center everything vertically + horizontally */
+    .page {
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start; /* title near top like screenshot */
+      padding:32px 20px 80px;
+      box-sizing:border-box;
+    }
+
+    h1 {
+      margin: 8px 0 26px;
+      font-size:28px;
+      font-weight:800;
+      text-align:center;
+      color:#111;
+    }
+
+    /* card wrapper */
+    .card {
+      width:260px;
+      background:var(--card-bg);
+      border-radius:6px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.14);
+      border:1px solid rgba(0,0,0,0.08);
+      overflow:hidden;
+      text-align:center;
+    }
+
+    /* image area with white inset like screenshot */
+    .card .img-wrap{
+      padding:18px;
+      background: #fafafa;
+      border-bottom:1px solid rgba(0,0,0,0.04);
+    }
+    .card img{
+      width:140px;
+      height:140px;
+      object-fit:contain;
+      display:block;
+      margin:0 auto;
+      border-radius:4px;
+    }
+
+    .card .body {
+      padding:14px 16px 18px;
+    }
+
+    .title {
+      margin:6px 0 8px;
+      font-size:16px;
+      font-weight:700;
+      color:#111;
+    }
+
+    .desc {
+      margin:0 0 10px;
+      font-size:12px;
+      color:#555;
+      line-height:1.3;
+      min-height:32px; /* keep same height */
+    }
+
+    .price {
+      margin:6px 0 12px;
+      color:var(--price);
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .btn {
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      border:0;
+      padding:8px 12px;
+      font-size:13px;
+      border-radius:6px;
+      cursor:pointer;
+      box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+      transition: transform .08s ease, box-shadow .12s ease, background .12s ease;
+      text-decoration:none;
+    }
+    .btn:active{ transform: translateY(1px); box-shadow:none; }
+    .btn:hover{ background:#1a4ef7; color:#fff; }
+
+    /* responsive: multiple cards centered in a row on large screens */
+    .grid {
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    /* small note under card (optional) */
+    .note { margin-top:14px; font-size:12px; color:#333; opacity:0.8; }
+
+    /* small screen tweak */
+    @media (max-width:420px){
+      .card{ width:90%; }
+      .card img{ width:120px; height:120px; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>My E-commerce Store</h1>
+
+    <!-- grid allows you to add more cards later -->
+    <div class="grid">
+      <div class="card" aria-label="Product: Stylish T-Shirt">
+        <div class="img-wrap">
+          <!-- replace URL below with your local image like "eximg.jpg" -->
+          <img src="https://i.imgur.com/3KQw6cR.png" alt="T-Shirt">
+        </div>
+
+        <div class="body">
+          <div class="title">Stylish T-Shirt</div>
+          <div class="desc">A comfortable cotton t-shirt perfect for casual wear.</div>
+          <div class="price">Price: ₹499</div>
+          <button class="btn" onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">(Replace the image URL with your local <code>eximg.jpg</code> if needed)</div>
+  </div>
+
+  <script>
+    function addToCart(){
+      // small confirmation to simulate action
+      alert("Added to cart ✓");
+    }
+  </script>
+</body>
+</html>
