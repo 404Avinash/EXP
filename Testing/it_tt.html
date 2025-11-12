@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IT Department Timetable</title>
+  <style>
+    table, th, td { border: 1px solid #222; border-collapse: collapse; padding: 6px; text-align: center; }
+    caption { font-weight: bold; margin-bottom: 6px; }
+    th { background-color: #f5f5f5; }
+  </style>
+</head>
+<body>
+
+<table>
+  <caption>B.Tech IT - Semester II Timetable</caption>
+  <thead>
+    <tr>
+      <th rowspan="2">Day</th>
+      <th colspan="4">Session</th>
+    </tr>
+    <tr>
+      <th>9–10</th><th>10–11</th><th>11–12</th><th>2–3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Mon</th>
+      <td>Python</td>
+      <td>Maths</td>
+      <td>Break</td>
+      <td>DBMS</td>
+    </tr>
+    <tr>
+      <th>Tue</th>
+      <td colspan="2">Operating Systems</td>
+      <td rowspan="2">Lab</td>
+      <td>Break</td>
+    </tr>
+    <tr>
+      <th>Wed</th>
+      <td>AI Basics</td>
+      <td>English</td>
+      <td>Break</td>
+    </tr>
+    <tr>
+      <th>Thu</th>
+      <td colspan="4">
+        <!-- Nested Table for Workshop -->
+        <table>
+          <tr><th colspan="2">Workshop: Cloud Computing</th></tr>
+          <tr><td>Time</td><td>3 hrs</td></tr>
+          <tr><td>Instructor</td><td>Mr. Ray</td></tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th>Fri</th>
+      <td>Cybersecurity</td>
+      <td colspan="2">Project Work</td>
+      <td>Break</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

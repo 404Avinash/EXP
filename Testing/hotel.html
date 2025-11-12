@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Room Booking</title>
+  <style>
+    body { font-family:Arial; background:#fafafa; }
+    form { width:320px; margin:auto; padding:20px; border:1px solid #aaa; border-radius:8px; background:white; }
+    label { display:block; margin-top:10px; }
+    input, select, textarea { width:100%; padding:6px; margin-top:4px; }
+    button { background:#007bff; color:white; border:none; padding:8px 12px; border-radius:5px; margin-top:10px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <form>
+    <h2 align="center">🏨 Hotel Room Booking</h2>
+
+    <label for="fname">Name:</label>
+    <input type="text" id="fname" placeholder="John Doe" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="john@example.com">
+
+    <label for="room">Room Type:</label>
+    <select id="room">
+      <option>Single</option>
+      <option>Double</option>
+      <option>Suite</option>
+    </select>
+
+    <label for="checkin">Check-In:</label>
+    <input type="date" id="checkin">
+
+    <label for="checkout">Check-Out:</label>
+    <input type="date" id="checkout">
+
+    <label>Payment Mode:</label>
+    <input type="radio" name="pay" id="cash"> <label for="cash">Cash</label>
+    <input type="radio" name="pay" id="card"> <label for="card">Card</label>
+
+    <label for="note">Additional Notes:</label>
+    <textarea id="note" rows="3"></textarea>
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+</body>
+</html>

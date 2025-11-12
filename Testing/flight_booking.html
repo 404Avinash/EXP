@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Booking Form</title>
+  <style>
+    form { width:340px; margin:auto; padding:20px; border:1px solid #aaa; border-radius:10px; background:#f0f0ff; }
+    label { display:block; margin-top:6px; }
+    input, select, textarea { width:100%; margin-bottom:10px; padding:6px; }
+    button { background:#2a43c2; color:white; border:none; padding:8px 12px; border-radius:5px; }
+  </style>
+</head>
+<body>
+  <form>
+    <h2 align="center">✈️ Flight Booking</h2>
+
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" placeholder="Passenger name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="example@email.com">
+
+    <label for="from">From:</label>
+    <input type="text" id="from" placeholder="City of departure">
+
+    <label for="to">To:</label>
+    <input type="text" id="to" placeholder="Destination city">
+
+    <label for="depart">Departure Date:</label>
+    <input type="date" id="depart">
+
+    <label for="class">Class:</label>
+    <select id="class">
+      <option>Economy</option>
+      <option>Business</option>
+      <option>First Class</option>
+    </select>
+
+    <label>Meal Preference:</label>
+    <input type="radio" name="meal" id="veg"> <label for="veg">Veg</label>
+    <input type="radio" name="meal" id="nonveg"> <label for="nonveg">Non-Veg</label>
+
+    <label for="req">Special Requests:</label>
+    <textarea id="req" rows="3"></textarea>
+
+    <button type="submit">Confirm Flight</button>
+  </form>
+</body>
+</html>

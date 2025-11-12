@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bus Booking</title>
+  <style>
+    form { width:300px; margin:auto; border:1px solid #ccc; border-radius:10px; padding:20px; background:#fff7f0; }
+    label { display:block; margin-top:6px; }
+    input, select, textarea { width:100%; margin-bottom:10px; padding:6px; }
+    button { background:#d35400; color:white; border:none; padding:8px; border-radius:5px; }
+  </style>
+</head>
+<body>
+  <form>
+    <h2 align="center">🚌 Bus Ticket Booking</h2>
+
+    <label for="name">Passenger Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label for="from">From:</label>
+    <input type="text" id="from" placeholder="City of departure">
+
+    <label for="to">To:</label>
+    <input type="text" id="to" placeholder="Destination city">
+
+    <label for="date">Journey Date:</label>
+    <input type="date" id="date">
+
+    <label for="seattype">Seat Type:</label>
+    <select id="seattype">
+      <option>Sleeper</option>
+      <option>AC</option>
+      <option>Non-AC</option>
+    </select>
+
+    <label for="count">No. of Tickets:</label>
+    <input type="number" id="count" min="1" max="10">
+
+    <button type="submit">Book Ticket</button>
+  </form>
+</body>
+</html>
