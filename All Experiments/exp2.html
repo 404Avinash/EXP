@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experiment 2</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 24px auto; padding: 0 16px; }
+    header, section { margin-bottom: 24px; }
+    .center { text-align: center; }
+    img.logo { width: 200px; height: 200px; object-fit: contain; display:block; margin: 8px auto; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADING SECTION -->
+  <header class="center">
+    <h1>Global Daily News</h1>
+    <p>Your Trusted Source for Latest Updates</p>
+    <hr>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="center">
+    <a href="#world">World</a> |
+    <a href="#sports">Sports</a> |
+    <a href="#entertainment">Entertainment</a> |
+    <a href="#podcast">Podcast</a> |
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <hr>
+
+  <!-- WORLD NEWS SECTION -->
+  <section id="world">
+    <h2>World News</h2>
+    <p>Today’s top headline: Global leaders meet to discuss climate change initiatives.</p>
+
+    <!-- IMAGE SECTION -->
+    <!-- Make sure the file name exactly matches (case-sensitive on many servers) -->
+    <img class="logo" src="BBC_World_News_2022_(Boxed).jpg" alt="BBC logo">
+
+    <p><a href="https://www.bbc.com/news" target="_blank" rel="noopener">Read more on BBC</a></p>
+    <hr>
+  </section>
+
+  <!-- SPORTS SECTION -->
+  <section id="sports">
+    <h2>Sports Update</h2>
+    <p>Highlights of yesterday’s football match with thrilling last-minute goals!</p>
+    <iframe width="853" height="480" src="https://www.youtube.com/embed/gjvOfgTz6cc"
+      title="Portugal vs Hungary | Highlights" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <hr>
+  </section>
+
+  <!-- ENTERTAINMENT SECTION -->
+  <section id="entertainment">
+    <h2>Entertainment Buzz</h2>
+    <p>New movie trailer released today. Fans are excited!</p>
+
+    <!-- Embedded YouTube (works) -->
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/8bwXFz17HUg?si=FCJVDuoHvGVuFg0v"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <!-- Remove the <video> tag unless you have a direct .mp4 file URL -->
+    <hr>
+  </section>
+
+  <!-- PODCAST -->
+  <section id="podcast">
+    <h2>News Podcast</h2>
+    <p>Listen to today’s top headlines:</p>
+    <audio src="videoplayback.m4a" controls>Your browser does not support the audio element.</audio>
+    <hr>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@globalnews.com</p>
+    <p>&copy; 2025 Global Daily News</p>
+  </section>
+
+</body>
+</html>
