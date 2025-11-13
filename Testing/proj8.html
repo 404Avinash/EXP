@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vertical Positions</title>
+  <style>
+    .outer{display:flex;height:220px;border:1px solid #ddd;margin:20px;}
+    .col{flex:1;display:flex;flex-direction:column;padding:10px;}
+    .col .box{width:80px;background:#3498db;color:#fff;margin:5px;padding:10px;border-radius:4px;}
+    .col.a{align-items:flex-start;justify-content:center;}
+    .col.b{align-items:center;justify-content:center;}
+    .col.c{align-items:flex-end;justify-content:center;}
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="col a"><div class="box">Top</div></div>
+    <div class="col b"><div class="box">Center</div></div>
+    <div class="col c"><div class="box">Bottom</div></div>
+  </div>
+</body>
+</html>
