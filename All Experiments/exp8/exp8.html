@@ -3,17 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <link rel="stylesheet" href="experiment-8.css">
+    <title>Student Cards</title>
+    <style>
+        /* General Setup */
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff;
+            margin: 0;
+        }
+
+        /* The Outer Box (Black Border) */
+        .container {
+            border: 2px solid #000;
+            padding: 50px;
+            display: flex;
+            gap: 30px; /* Space between cards */
+            background-color: white;
+            flex-wrap: wrap; /* Responsive on mobile */
+            justify-content: center;
+        }
+
+        /* Individual Card Design */
+        .card {
+            width: 220px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 2px solid #2d8bf0; /* Blue Border */
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Slight shadow */
+        }
+
+        /* Blue Circle Avatar */
+        .avatar {
+            width: 70px;
+            height: 70px;
+            background-color: #007bff; /* Bright Blue */
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto; /* Centering the circle */
+        }
+
+        /* Typography */
+        h2 {
+            margin: 10px 0 5px 0;
+            font-family: 'Times New Roman', serif; /* Matching the serif font in image */
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+            font-family: sans-serif;
+            line-height: 1.4;
+        }
+        
+        .branch {
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
-    <h1>FLEXIBLE LAYOUT PLAYGROUND</h1>
+
     <div class="container">
-    <div class="box box1">Box 1</div>
-    <div class="box box2">Box 2</div>
-    <div class="box box3">Box 3</div>
-    <div class="box box4">Box 4</div>
-    <div class="box box5">Box 5</div>
+        <div class="card">
+            <div class="avatar">JK</div>
+            <h2>Jeet Kumar</h2>
+            <p class="branch">B.Tech - CSE</p>
+            <p>Roll No: 21CS1007</p>
+            <p>1st Year</p>
+        </div>
+
+        <div class="card">
+            <div class="avatar">AR</div>
+            <h2>Asha Rani</h2>
+            <p class="branch">B.Tech - IT</p>
+            <p>Roll No: 21IT1012</p>
+            <p>1st Year</p>
+        </div>
+
+        <div class="card">
+            <div class="avatar">RK</div>
+            <h2>Rohit Kumar</h2>
+            <p class="branch">B.Tech - ECE</p>
+            <p>Roll No: 21EC1009</p>
+            <p>1st Year</p>
+        </div>
     </div>
+
 </body>
 </html>
