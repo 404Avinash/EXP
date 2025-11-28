@@ -13,3 +13,5 @@ function updateDisplay() {
      }
 
 function startTimer() {
+
+    if (interval) return;
