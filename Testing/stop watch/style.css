@@ -1,9 +1,16 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-      padding: 40px;
+    padding: 40px;
 }
 
 #display {
     font-size: 40px;
     margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
