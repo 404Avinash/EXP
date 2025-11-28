@@ -17,6 +17,19 @@ body {
 h2 {
     margin-bottom: 10px;
     color: #333;
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+td, th {
+    border: 1px solid #555;
+    padding: 8px;
+}
+th {
+    background: #eee;
+}
+
 }
 
 }
