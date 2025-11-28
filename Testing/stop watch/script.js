@@ -9,3 +9,7 @@ function updateDisplay() {
 
 
      document.getElementById("display").textContent = `${hrs}:${mins}:${secs}`;
+
+     }
+
+function startTimer() {
