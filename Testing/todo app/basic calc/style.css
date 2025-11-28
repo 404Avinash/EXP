@@ -42,5 +42,28 @@ h1 {
     cursor: pointer;
 }
 nt-size: 16px;
+    cursor: pbody {
+    padding: 20px;
+    font-family: Arial;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+#display {
+    width: 180px;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.buttons button {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    font-size: 16px;
     cursor: pointer;
+}
+ointer;
 }
