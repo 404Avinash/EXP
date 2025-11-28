@@ -3,6 +3,17 @@ body {
     background-color: #fafafa;
     color: #222;
     padding: 20px;
+    button {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+button:hover {
+    background: #444;
+}
+
 }
 .box {
     border: 1px solid #ccc;
