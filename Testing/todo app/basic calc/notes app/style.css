@@ -10,3 +10,4 @@ header { margin-bottom: 15px; }
 h1 { font-size: 24px; }
 textarea {
     width: 100%;
+     min-height: 100px;
