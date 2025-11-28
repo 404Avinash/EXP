@@ -21,3 +21,5 @@ button {
     margin-right: 8px;
       cursor: pointer;
 }
+.note {
+  border: 1px solid #ddd;
