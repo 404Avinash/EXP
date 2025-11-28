@@ -17,3 +17,10 @@ function startTimer() {
     if (interval) return;
 
     interval = setInterval(() => {
+
+
+
+          seconds++;
+        updateDisplay();
+    }, 1000);
+}
