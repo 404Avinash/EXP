@@ -24,3 +24,7 @@ function startTimer() {
         updateDisplay();
     }, 1000);
 }
+function stopTimer() {
+    clearInterval(interval);
+    interval = null;
+}
