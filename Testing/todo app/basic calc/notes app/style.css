@@ -28,3 +28,4 @@ button {
   border-radius: 4px;
   }
 .note .meta { font-size: 12px; color: #666; margin-bottom: 6px; }
+.note button { float: right; }
