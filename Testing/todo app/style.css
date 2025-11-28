@@ -65,7 +65,33 @@ th: 200px;
 }
 
 button {
+    padding: 8pbody {
+    font-family: Arial;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+input {
+    padding: 8px;
+    width: 200px;
+}
+
+button {
     padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul {
+    margin-top: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+x 12px;
     cursor: pointer;
 }
 
