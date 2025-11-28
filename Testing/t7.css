@@ -5,4 +5,11 @@
 }
 body {
     font-family: Arial, sans-serif;
+    header {
+    padding: 20px;
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
 }
