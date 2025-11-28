@@ -4,3 +4,6 @@ body {
       padding: 40px;
 }
 
+#display {
+    font-size: 40px;
+    margin: 20px 0;
