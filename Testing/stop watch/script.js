@@ -6,3 +6,6 @@ function updateDisplay() {
      let mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
 
      let secs = String(seconds % 60).padStart(2, '0');
+
+
+     document.getElementById("display").textContent = `${hrs}:${mins}:${secs}`;
