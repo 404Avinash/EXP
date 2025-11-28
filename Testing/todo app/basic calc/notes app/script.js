@@ -134,14 +134,6 @@ function clearAll() {
   localStorage.removeItem(storageKey);
   renderNotes();
 }
-
-// Event wiring
-document.getElementById("saveBtn").addEventListener("click", () => {
-  const input = document.getElementById("noteInput");
-  addNote(input.value);
-  input.value = "";
-});
-
 document.getElementById("clearBtn").addEventListener("click", clearAll);
 
 // initial render
