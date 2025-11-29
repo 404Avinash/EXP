@@ -411,7 +411,430 @@
       });
 
       // small accessibility: focus outlines for keyboard users
+      function handleFirstTab(e){<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peregrine — Demo Integrated HTML + CSS Site</title>
+  <meta name="description" content="A large single-file demo site with HTML, CSS and small JS for interactivity." />
+  <style>
+    /* -----------------------------------------
+       Peregrine — Single-file demo website
+       - Responsive layout
+       - CSS variables, Grid/Flex, animations
+       - Dark mode toggle (JS) + small interactivity
+       ------------------------------------------*/
+
+    :root{
+      --bg: #0f1724;           /* night */
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #7c3aed;
+      --accent-2: #06b6d4;
+      --glass: rgba(255,255,255,0.04);
+      --glow: 0 8px 30px rgba(124,58,237,0.12);
+      --radius: 12px;
+      --max-width: 1200px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+      color-scheme: dark;
+    }
+
+    /* Light theme variables (swapped via .light on <html>) */
+    html.light{
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --muted: #4b5563;
+      --accent: #4f46e5;
+      --accent-2: #0891b2;
+      --glass: rgba(15,23,36,0.03);
+      --glow: 0 8px 30px rgba(79,70,229,0.08);
+      color-scheme: light;
+    }
+
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg), #08101a 120%);
+      color: #e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px 20px;
+    }
+
+    .wrap{
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+
+    /* NAV */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:28px;
+    }
+
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:0.4px
+    }
+    .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow: var(--glow);
+      display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--mono);
+      font-size:18px;color:white
+    }
+
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+    nav a:hover{color:var(--card);background:var(--glass)}
+
+    .controls{display:flex;gap:10px;align-items:center}
+    .btn{
+      background:linear-gradient(90deg, rgba(255,255,255,0.04), transparent);
+      border:1px solid rgba(255,255,255,0.04);
+      padding:8px 12px;border-radius:10px;color:inherit;cursor:pointer;font-weight:600
+    }
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:none;box-shadow:var(--glow)}
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:32px
+    }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius);padding:28px;box-shadow:var(--glow);border:1px solid rgba(255,255,255,0.03)
+    }
+    h1{font-size:34px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    /* STATS row */
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:10px;text-align:center}
+    .stat strong{display:block;font-size:20px}
+    .muted{color:var(--muted)}
+
+    /* FEATURE GRID */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:30px}
+    .feature{background:var(--card);padding:18px;border-radius:10px;color:inherit;box-shadow:var(--glow);border:1px solid rgba(255,255,255,0.02)}
+    .feature h3{margin:0 0 8px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* GALLERY */
+    .gallery{
+      display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-bottom:28px
+    }
+    .tile{border-radius:10px;overflow:hidden;background:#111;min-height:140px;display:flex;align-items:end}
+    .tile img{width:100%;height:100%;object-fit:cover;display:block}
+    .tile .caption{padding:12px;background:linear-gradient(180deg, transparent, rgba(0,0,0,0.5));color:white}
+
+    /* PRICING */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:32px}
+    .plan{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .plan h4{margin:0 0 6px}
+    .price{font-size:22px;font-weight:800}
+
+    /* FAQ */
+    .faq{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:20px;border-radius:10px}
+    .q{padding:12px;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,0.02);cursor:pointer}
+    .q h5{margin:0;display:flex;justify-content:space-between;gap:10px}
+    .qa{padding:8px 12px;color:var(--muted);display:none}
+
+    /* CONTACT */
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    form input,form textarea{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    form textarea{grid-column:1 / -1;min-height:120px}
+
+    footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+
+    /* small screen */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .pricing{grid-template-columns:1fr}
+      form{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    @media (max-width:520px){
+      body{padding:16px}
+      h1{font-size:26px}
+      .features{grid-template-columns:1fr}
+    }
+
+    /* small details */
+    .chip{display:inline-block;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px}
+    .kbd{font-family:var(--mono);padding:6px 8px;border-radius:6px;background:rgba(0,0,0,0.2);font-size:13px}
+
+    /* subtle animation */
+    .pulse{animation:pulse 3s ease-in-out infinite}
+    @keyframes pulse{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">PG</div>
+        <div>
+          <div style="font-size:14px;opacity:.92">Peregrine</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:3px">Demo integrated HTML + CSS site</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="controls">
+        <button class="btn" id="toggleTheme" title="Toggle theme">🌗</button>
+        <button class="btn primary" id="openModal">Get Started</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="hero">
+        <div class="hero-card">
+          <h1>Build fast — look sharp. A demo for modern UI ideas.</h1>
+          <p class="lead">This single-file project demonstrates responsive layout, CSS variables, graceful dark/light theme switching, small JS interactions, cards, gallery and more. Use it as a playground.</p>
+
+          <div class="stats">
+            <div class="stat"><span class="muted">Users</span><strong>12.3k</strong></div>
+            <div class="stat"><span class="muted">Projects</span><strong>312</strong></div>
+            <div class="stat"><span class="muted">Uptime</span><strong>99.99%</strong></div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <button class="btn primary">Start free trial</button>
+            <button class="btn" id="scrollFeatures">Explore features</button>
+          </div>
+
+          <div style="margin-top:18px;color:var(--muted);font-size:13px">Pro tip: press <span class="kbd">T</span> to toggle theme or click the moon icon.</div>
+        </div>
+
+        <aside style="display:flex;flex-direction:column;gap:12px">
+          <div class="hero-card" style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-size:12px;color:var(--muted)">Active event</div>
+                <div style="font-weight:700">Design sprint — Week 4</div>
+              </div>
+              <div class="chip">Live</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Sessions, notes and outcomes in a single place — quick summary below.</div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <div style="flex:1;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:10px;border-radius:8px;text-align:center">Wireframes</div>
+              <div style="flex:1;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:10px;border-radius:8px;text-align:center">Prototypes</div>
+            </div>
+          </div>
+
+          <div class="hero-card pulse">
+            <div style="font-size:12px;color:var(--muted)">What's new</div>
+            <div style="font-weight:700">Realtime Collaborations</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Invite teammates, comment on drafts, or share with a public link.</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="features">
+        <h2 style="margin-bottom:12px">Features</h2>
+        <div class="features">
+          <div class="feature">
+            <h3>Responsive layout</h3>
+            <p>Fluid grids and components that adapt from phones to large screens without external frameworks.</p>
+          </div>
+          <div class="feature">
+            <h3>Design tokens</h3>
+            <p>CSS variables are used as tokens for colors, radii and spacing — easy to tweak globally.</p>
+          </div>
+          <div class="feature">
+            <h3>Accessible interactions</h3>
+            <p>Keyboard shortcuts, focus outlines and semantic markup for assistive tech.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2 style="margin-bottom:12px">Gallery</h2>
+        <div class="gallery">
+          <div class="tile"><img src="https://images.unsplash.com/photo-1501426026826-31c667bdf23d?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="mountain"><div class="caption">High altitude</div></div>
+          <div class="tile"><img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="forest"><div class="caption">Deep forest</div></div>
+          <div class="tile"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="ocean"><div class="caption">Ocean dusk</div></div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <h2 style="margin-bottom:12px">Pricing</h2>
+        <div class="pricing">
+          <div class="plan">
+            <h4>Starter</h4>
+            <div class="price">$0<span style="font-size:12px;color:var(--muted)">/mo</span></div>
+            <p style="color:var(--muted);margin-top:8px">For hobbyists test-driving the platform.</p>
+            <ul style="color:var(--muted);margin-top:12px">
+              <li>1 project</li>
+              <li>Community support</li>
+            </ul>
+            <div style="margin-top:12px"><button class="btn">Choose</button></div>
+          </div>
+
+          <div class="plan" style="border:2px solid rgba(124,58,237,0.18);box-shadow:0 12px 40px rgba(124,58,237,0.06);transform:translateY(-6px)">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h4>Pro</h4><div class="chip">Popular</div></div>
+            <div class="price">$29<span style="font-size:12px;color:var(--muted)">/mo</span></div>
+            <p style="color:var(--muted);margin-top:8px">For small teams and professionals.</p>
+            <ul style="color:var(--muted);margin-top:12px">
+              <li>10 projects</li>
+              <li>Priority support</li>
+            </ul>
+            <div style="margin-top:12px"><button class="btn primary">Choose</button></div>
+          </div>
+
+          <div class="plan">
+            <h4>Enterprise</h4>
+            <div class="price">Contact</div>
+            <p style="color:var(--muted);margin-top:8px">Custom solutions and SLAs for large orgs.</p>
+            <ul style="color:var(--muted);margin-top:12px">
+              <li>Unlimited projects</li>
+              <li>Enterprise support</li>
+            </ul>
+            <div style="margin-top:12px"><button class="btn">Contact sales</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2 style="margin-bottom:12px">FAQ</h2>
+        <div class="faq">
+          <div class="q" data-open="false">
+            <h5>How do I switch theme?<span>+</span></h5>
+            <div class="qa">Press the moon icon, or press <span class="kbd">T</span>. Theme will persist using localStorage.</div>
+          </div>
+          <div class="q" data-open="false">
+            <h5>Can I self-host this?<span>+</span></h5>
+            <div class="qa">Yes — this is plain HTML/CSS/JS. Drop it in any static hosting directory and it will work.</div>
+          </div>
+          <div class="q" data-open="false">
+            <h5>Is this accessible?<span>+</span></h5>
+            <div class="qa">The markup tries to be semantic and keyboard-friendly; further a11y improvements are recommended before production.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 style="margin-bottom:12px">Contact</h2>
+        <div class="hero-card">
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="What do you want to build?" required></textarea>
+            <div style="display:flex;gap:10px;justify-content:flex-end">
+              <button type="reset" class="btn">Reset</button>
+              <button type="submit" class="btn primary">Send</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <strong>Peregrine</strong> — Demo site</div>
+        <div class="muted">Made with ❤️ — Single file demo</div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modal (simple) -->
+  <div id="modal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,0.5)">
+    <div style="max-width:720px;width:100%;background:var(--card);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.04)">
+      <h3 style="margin-top:0">Welcome aboard</h3>
+      <p style="color:var(--muted)">Quick onboarding: watch the product tour or start a new project with templates.</p>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px">
+        <button class="btn" id="closeModal">Close</button>
+        <button class="btn primary">Take tour</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Small interactive JS: theme toggle, modal, FAQ toggle, keyboard shortcuts, fake form submit
+    (function(){
+      const root = document.documentElement;
+      const toggle = document.getElementById('toggleTheme');
+      const openModal = document.getElementById('openModal');
+      const modal = document.getElementById('modal');
+      const closeModal = document.getElementById('closeModal');
+      const scrollFeatures = document.getElementById('scrollFeatures');
+
+      // Theme persistence
+      const current = localStorage.getItem('peregrine-theme') || 'dark';
+      if(current === 'light') root.classList.add('light');
+
+      function setTheme(next){
+        if(next === 'light') root.classList.add('light'); else root.classList.remove('light');
+        localStorage.setItem('peregrine-theme', next);
+      }
+
+      toggle.addEventListener('click', ()=>{
+        const isLight = root.classList.toggle('light');
+        setTheme(isLight ? 'light' : 'dark');
+      });
+
+      // keyboard shortcut
+      window.addEventListener('keydown', (e)=>{
+        if(e.key.toLowerCase() === 't'){
+          const isLight = root.classList.toggle('light');
+          setTheme(isLight ? 'light' : 'dark');
+        }
+      });
+
+      // modal
+      openModal.addEventListener('click', ()=>{ modal.style.display = 'flex'; });
+      closeModal.addEventListener('click', ()=>{ modal.style.display = 'none'; });
+      modal.addEventListener('click', (ev)=>{ if(ev.target === modal) modal.style.display='none'; });
+
+      // smooth scroll
+      scrollFeatures && scrollFeatures.addEventListener('click', ()=>{
+        document.getElementById('features').scrollIntoView({behavior:'smooth'});
+      });
+
+      // FAQ toggle
+      document.querySelectorAll('.q').forEach(q=>{
+        q.addEventListener('click', ()=>{
+          const open = q.getAttribute('data-open') === 'true';
+          q.setAttribute('data-open', String(!open));
+          q.querySelector('.qa').style.display = open ? 'none' : 'block';
+          q.querySelector('h5 span').textContent = open ? '+' : '−';
+        });
+      });
+
+      // fake submit
+      document.getElementById('contactForm').addEventListener('submit', (ev)=>{
+        ev.preventDefault();
+        const btn = ev.target.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending...';
+        setTimeout(()=>{ btn.textContent = 'Sent!'; btn.disabled = true }, 900);
+      });
+
+      // small accessibility: focus outlines for keyboard users
       function handleFirstTab(e){
+        if(e.key === 'Tab') document.body.classList.add('show-focus');
+        window.removeEventListener('keydown', handleFirstTab);
+      }
+      window.addEventListener('keydown', handleFirstTab);
+
+    })();
+  </script>
+</body>
+</html>
+
         if(e.key === 'Tab') document.body.classList.add('show-focus');
         window.removeEventListener('keydown', handleFirstTab);
       }
