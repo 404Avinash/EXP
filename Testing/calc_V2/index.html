@@ -23,6 +23,7 @@
             min-height: 100vh;
             background: #23242a; /* Dark background */
         }
+
         /* The Calculator Container */
         .calculator {
             background: #3a4452;
@@ -30,6 +31,7 @@
             border-radius: 20px;
             box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
         }
+
         /* The Display Screen */
         .calculator input {
             width: 100%;
@@ -42,3 +44,120 @@
             margin-bottom: 20px;
             outline: none; /* Removes the blue highlight border */
         }
+
+        /* The Grid for Buttons */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 Columns of equal width */
+            gap: 15px; /* Space between buttons */
+        }
+
+        /* Button Styling */
+        .buttons button {
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%; /* Makes them perfectly round */
+            background: transparent;
+            color: #fff;
+            font-size: 20px;
+            box-shadow: -5px -5px 12px rgba(255,255,255,0.1), 
+                        5px 5px 12px rgba(0,0,0,0.4); /* Neumorphism 3D effect */
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Hover effect */
+        .buttons button:hover {
+            box-shadow: inset -5px -5px 12px rgba(255,255,255,0.1), 
+                        inset 5px 5px 12px rgba(0,0,0,0.4); /* Pushed in effect */
+        }
+
+        /* Coloring the operators */
+        .operator {
+            color: #6dee0a; /* Green text for operators */
+        }
+
+        .equalBtn {
+            background-color: #fb7c14 !important;
+            color: #fff;
+            box-shadow: none !important; /* Flat style for equal button */
+        }
+        
+        .equalBtn:hover {
+            background-color: #d66a10 !important;
+        }
+
+        .ac {
+            color: #fb7c14; /* Orange text for AC and DEL */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" placeholder="0" id="outputScreen" readOnly>
+        
+        <div class="buttons">
+            <button class="ac" onclick="Clear()">AC</button>
+            <button class="ac" onclick="del()">DEL</button>
+            <button class="operator" onclick="display('%')">%</button>
+            <button class="operator" onclick="display('/')">/</button>
+
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button class="operator" onclick="display('*')">*</button>
+
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button class="operator" onclick="display('-')">-</button>
+
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button class="operator" onclick="display('+')">+</button>
+
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="calculate()" class="equalBtn" style="width: 135px; border-radius: 40px; grid-column: span 2;">=</button>
+        </div>
+    </div>
+
+    <script>
+        /* --- JAVASCRIPT LOGIC --- */
+
+        let outputScreen = document.getElementById("outputScreen");
+
+        // 1. Function to show numbers/operators on screen
+        function display(num) {
+            outputScreen.value += num;
+        }
+
+        // 2. Function to Calculate (The Magic)
+        function calculate() {
+            try {
+                // eval() is a built-in JS function that does the math automatically
+                outputScreen.value = eval(outputScreen.value);
+            }
+            catch(err) {
+                alert("Invalid Calculation");
+            }
+        }
+
+        // 3. Function to Clear All
+        function Clear() {
+            outputScreen.value = "";
+        }
+
+        // 4. Function to Delete last character
+        function del() {
+            // slice(0, -1) removes the last character from the string
+            outputScreen.value = outputScreen.value.slice(0, -1);
+        }
+    </script>
+
+</body>
+</html>
