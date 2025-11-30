@@ -166,14 +166,6 @@
             
             // We only show the first 2 digits of milliseconds to keep it readable
             let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
-
-            // Remove the last digit of ms to make it look like 2 digits (optional preference)
-            // Or just display it as is. Here we will format it simply:
-            // Since we count by 10s, we can just slice the string to keep it neat.
-            // Let's keep it simple:
-            
-            // Standard formatting for display
-            // We divide ms by 10 to show 2 digits (0-99) instead of 3 (0-999)
             let msString = ms.toString().slice(0,2); 
 
             timerRef.innerHTML = `${m} : ${s} : ${msString}`;
