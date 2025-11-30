@@ -74,3 +74,33 @@
             border-radius: 40px;
             font-weight: 600;
             transition: background 0.3s;
+            }
+
+        button:hover {
+            background: #e0402b;
+        }
+
+        /* 6. The List Styling */
+        ul li {
+            list-style: none;
+            font-size: 17px;
+            padding: 12px 8px 12px 50px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+            border-bottom: 1px solid #eee; /* Light divider line */
+        }
+
+        /* The custom circle icon before the text */
+        ul li::before {
+            content: '';
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-image: url(https://img.icons8.com/ios/50/000000/circle-thin.png); /* Empty circle icon */
+            background-size: cover;
+            background-position: center;
+            top: 10px;
+            left: 8px;
+        }
