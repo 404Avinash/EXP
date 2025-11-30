@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Stopwatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS STYLING --- */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace; /* Monospace is best for clocks */
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: #262626;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Soft shadow */
+            border: 1px solid #333;
+        }
+
+        /* The Timer Display */
+        .timer-display {
+            font-size: 60px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #00d2ff; /* Neon Blue */
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.5); /* Neon Glow effect */
+        }
+
+        /* Buttons Container */
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        /* Specific Button Colors */
+        #startBtn {
+            border-color: #00ff88;
+            color: #00ff88;
+        }
+        
+        #startBtn:hover {
+            background: #00ff88;
+            color: #1a1a1a;
+            box-shadow: 0 0 15px #00ff88;
+        }
+
+        #stopBtn {
+            border-color: #ff4d4d;
+            color: #ff4d4d;
+        }
+
+        #stopBtn:hover {
+            background: #ff4d4d;
+            color: #1a1a1a;
+            box-shadow: 0 0 15px #ff4d4d;
+        }
+
+        #resetBtn {
+            border-color: #00d2ff;
+            color: #00d2ff;
+        }
+
+        #resetBtn:hover {
+            background: #00d2ff;
+            color: #1a1a1a;
+            box-shadow: 0 0 15px #00d2ff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="timer-display">
+            00 : 00 : 00
+        </div>
+        
+        <div class="buttons">
+            <button id="startBtn" onclick="startTimer()">Start</button>
+            <button id="stopBtn" onclick="stopTimer()">Stop</button>
+            <button id="resetBtn" onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        /* --- JAVASCRIPT LOGIC --- */
+        
+        // 1. Define variables to hold time values
+        let [milliseconds, seconds, minutes] = [0, 0, 0];
+        let timerRef = document.querySelector('.timer-display');
+        let int = null;
+
+        // 2. The Start Function
+        function startTimer() {
+            if(int !== null){
+                clearInterval(int); // Prevent multiple clicks speeding up the timer
+            }
+            // Run the displayTimer function every 10 milliseconds
+            int = setInterval(displayTimer, 10);
+        }
+
+        // 3. The Stop Function
+        function stopTimer() {
+            clearInterval(int); // Stops the interval
+        }
+
+        // 4. The Reset Function
+        function resetTimer() {
+            clearInterval(int);
+            // Reset variables to 0
+            [milliseconds, seconds, minutes] = [0, 0, 0];
+            // Update the screen immediately
+            timerRef.innerHTML = "00 : 00 : 00";
+        }
+
+        // 5. The Main Logic (Updates the numbers)
+        function displayTimer() {
+            milliseconds += 10;
+
+            if(milliseconds == 1000) {
+                milliseconds = 0;
+                seconds++;
+                
+                if(seconds == 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+            }
+
+            // Logic to add a leading '0' if the number is less than 10
+            // Example: turns "5" into "05"
+            let m = minutes < 10 ? "0" + minutes : minutes;
+            let s = seconds < 10 ? "0" + seconds : seconds;
+            
+            // We only show the first 2 digits of milliseconds to keep it readable
+            let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
+
+            // Remove the last digit of ms to make it look like 2 digits (optional preference)
+            // Or just display it as is. Here we will format it simply:
+            // Since we count by 10s, we can just slice the string to keep it neat.
+            // Let's keep it simple:
+            
+            // Standard formatting for display
+            // We divide ms by 10 to show 2 digits (0-99) instead of 3 (0-999)
+            let msString = ms.toString().slice(0,2); 
+
+            timerRef.innerHTML = `${m} : ${s} : ${msString}`;
+        }
+    </script>
+</body>
+</html>
