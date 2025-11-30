@@ -126,3 +126,21 @@
             text-align: center;
             border-radius: 50%;
         }
+        ul li span:hover {
+            background: #edeef0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="todo-app">
+        <h2>To-Do List <img src="https://img.icons8.com/doodle/48/000000/checklist--v1.png" style="width: 30px; margin-left: 10px;"></h2>
+        
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Add your text">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <ul id="list-container">
+            </ul>
+    </div>
