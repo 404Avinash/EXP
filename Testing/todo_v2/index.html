@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS STYLING --- */
+        
+        /* 1. Resetting default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        /* 2. Main Background */
+        body {
+            background: linear-gradient(135deg, #153677, #4e085f);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            }
+
+        /* 3. The To-Do App Container (The White Card) */
+        .todo-app {
+            width: 100%;
+            max-width: 540px;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        /* 4. Header Styling */
+        .todo-app h2 {
+            color: #002765;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        /* 5. The Input Row */
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #edeef0;
+            border-radius: 30px;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
