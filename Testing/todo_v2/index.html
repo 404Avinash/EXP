@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +76,7 @@
             border-radius: 40px;
             font-weight: 600;
             transition: background 0.3s;
-            }
+        }
 
         button:hover {
             background: #e0402b;
@@ -104,6 +106,7 @@
             top: 10px;
             left: 8px;
         }
+
         /* 7. Styles for "Completed" tasks */
         ul li.checked {
             color: #555;
@@ -113,6 +116,7 @@
         ul li.checked::before {
             background-image: url(https://img.icons8.com/color/48/000000/checked-2--v1.png); /* Filled Check icon */
         }
+
         /* 8. The "X" delete button */
         ul li span {
             position: absolute;
@@ -126,6 +130,7 @@
             text-align: center;
             border-radius: 50%;
         }
+
         ul li span:hover {
             background: #edeef0;
         }
@@ -144,3 +149,48 @@
         <ul id="list-container">
             </ul>
     </div>
+
+    <script>
+        /* --- JAVASCRIPT LOGIC --- */
+        
+        const inputBox = document.getElementById("input-box");
+        const listContainer = document.getElementById("list-container");
+
+        // Function to add a task
+        function addTask(){
+            if(inputBox.value === ''){
+                alert("You must write something!");
+            }
+            else{
+                let li = document.createElement("li");
+                li.innerHTML = inputBox.value;
+                listContainer.appendChild(li);
+                
+                // Create the 'X' button
+                let span = document.createElement("span");
+                span.innerHTML = "\u00d7"; // The 'x' symbol
+                li.appendChild(span);
+            }
+            inputBox.value = ""; // Clear input after adding
+        }
+
+        // Event listener for clicking on items (Checking or Deleting)
+        listContainer.addEventListener("click", function(e){
+            if(e.target.tagName === "LI"){
+                e.target.classList.toggle("checked");
+            }
+            else if(e.target.tagName === "SPAN"){
+                e.target.parentElement.remove();
+            }
+        }, false);
+
+        // Allow pressing "Enter" to add a task
+        inputBox.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        });
+
+    </script>
+</body>
+</html>
