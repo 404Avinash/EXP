@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="level7.css">
-</head>
-<body>
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
 
-<h2>Level 7 — Space Between + Center</h2>
-
-<div class="container">
-  <div class="box">1</div>
-  <div class="box">2</div>
-  <div class="box">3</div>
-  <div class="box">4</div>
-</div>
-
-</body>
-</html>
+.box {
+  width: 70px;
+  height: 50px;
+  background: #7c3aed;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
