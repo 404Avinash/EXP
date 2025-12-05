@@ -1,0 +1,15 @@
+body {
+  display:flex;
+  justify-content:center;
+  padding: 40px 0;
+}
+
+/* Centered card with padding, margin, border */
+.card {
+  padding: 20px;
+  margin: 30px auto;
+  border: 2px solid #333;
+  width: 300px;
+  background: #fff;
+  border-radius: 6px;
+}
