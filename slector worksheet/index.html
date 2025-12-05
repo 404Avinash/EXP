@@ -9,3 +9,64 @@
    GLOBAL BOILERPLATE STYLING
 ---------------------------- */
 body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f7fa;
+}
+
+section {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* ---------------------------
+      Q1 → Q9  CSS ANSWERS
+---------------------------- */
+
+/* Q1 — Universal Selector */
+* {
+  font-family: Arial;
+}
+
+/* Q2 — Element Selectors */
+.q2 h2 {
+  color: red;
+}
+
+.q2 p {
+  color: green;
+}
+
+/* Q3 — Class Selector */
+.highlight {
+  background: yellow;
+  font-weight: bold;
+}
+
+/* Q4 — ID Selector */
+#main-title {
+  color: purple;
+  text-align: center;
+}
+
+/* Q5 — Group Selector */
+.q5 h1, .q5 h2, .q5 p {
+  color: blue;
+}
+
+/* Q6 — Descendant Selector */
+.q6 div p {
+  color: brown;
+}
+
+/* Q7 — Child Selector */
+.q7 div > p {
+  color: green;
+}
