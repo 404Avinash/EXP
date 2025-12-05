@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: #ddd;
+  gap: 15px;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background: #ff6b6b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
