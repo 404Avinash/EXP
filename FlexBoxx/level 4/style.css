@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  gap: 10px;
+  background: #fafafa;
+  border: 1px dashed #ccc;
+  margin-bottom: 20px;
+  height: 150px;
+  padding: 10px;
+}
+
