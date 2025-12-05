@@ -1,0 +1,14 @@
+/* adjust base font-size to test rem */
+html { font-size: 16px; } /* change to 10px to see rem changes */
+
+/* px and rem sizes */
+.px { font-size: 24px; }
+.rem { font-size: 2rem; }
+
+/* responsive box: 50% width, 20vh height */
+.box {
+  width: 50%;
+  height: 20vh;
+  background: coral;
+  margin: 20px auto;
+}

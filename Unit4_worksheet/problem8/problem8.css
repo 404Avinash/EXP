@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  gap: 12px;
+}
+
+/* desktop colors */
+.left { flex:1; background:#dbeafe; padding:20px; }
+.right { flex:1; background:#d1fae5; padding:20px; }
+
+/* mobile: stack */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  /* different mobile colors */
+  .left { background: #bfdbfe; }
+  .right { background: #bbf7d0; }
+}

@@ -1,0 +1,16 @@
+.box1, .box2 {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  line-height: 100px;
+  color: white;
+  text-align: center;
+  margin-right: 12px;
+}
+
+/* different backgrounds */
+.box1 { background: #ef4444; float: left; }
+.box2 { background: #3b82f6; float: left; }
+
+/* clear fix for the following paragraph */
+.text { clear: both; margin-top: 10px; }
