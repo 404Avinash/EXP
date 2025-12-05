@@ -1,0 +1,15 @@
+.container {
+  display: flex; /* solution */
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background: tomato;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  border-radius: 6px;
+}
