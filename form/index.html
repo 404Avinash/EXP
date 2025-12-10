@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Creative Project Form</title>
+
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 60px auto;
+        padding: 30px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+        text-align: center;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        margin: 12px 0 5px;
+        font-weight: 500;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        margin-bottom: 15px;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background: #00c6ff;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #0072ff;
+    }
+
+    .success {
+        margin-top: 20px;
+        text-align: center;
+        color: #a6ffae;
+        font-weight: 500;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h2>Creative Submission Form</h2>
+
+    <label>Your Name</label>
+    <input type="text" id="name" placeholder="Type your legend name..." />
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Where can we reach you?" />
+
+    <label>Project Category</label>
+    <select id="category">
+        <option>AI / ML</option>
+        <option>Web App</option>
+        <option>Cybersecurity Tool</option>
+        <option>Game Dev</option>
+        <option>Art / Creative Media</option>
+    </select>
+
+    <label>Project Description</label>
+    <textarea id="desc" rows="4" placeholder="Tell the story behind your creation..."></textarea>
+
+    <button onclick="saveData()">Submit</button>
+
+    <div class="success" id="msg"></div>
+</div>
+
+<script>
+function saveData() {
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        category: document.getElementById("category").value,
+        description: document.getElementById("desc").value,
+        timestamp: new Date().toLocaleString()
+    };
+
+    const file = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(file);
+    a.download = "submission.json";
+    a.click();
+
+    document.getElementById("msg").innerHTML = "Your submission has been saved ✨";
+}
+</script>
+</body>
+</html>
