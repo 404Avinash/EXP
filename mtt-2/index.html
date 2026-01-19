@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Student Cards</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* --- FLEXBOX CONTAINER --- */
+        .container {
+            border: 2px solid #333; /* Outer Black Box */
+            background-color: white;
+            padding: 50px;
+            
+            /* The Flex Magic */
+            display: flex; 
+            justify-content: center; /* Center items horizontally */
+            gap: 40px; /* Space between cards */
+            flex-wrap: wrap; /* Mobile friendly: moves to next line if no space */
+        }
+
+        /* --- INTERACTIVE CARD --- */
+        .card {
+            width: 250px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 2px solid #2d8bf0;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer; /* Makes cursor look like a hand */
+            
+            /* Smooth Animation Setup */
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            top: 0;
+        }
+
+        /* HOVER STATE: Mouse upar aane par kya hoga */
+        .card:hover {
+            transform: translateY(-15px); /* Card moves UP */
+            box-shadow: 0 15px 30px rgba(45, 139, 240, 0.3); /* Strong shadow appears */
+            border-color: #0056b3;
+            background-color: #f0f8ff; /* Very light blue tint */
+        }
+
+        /* --- AVATAR DESIGN --- */
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background-color: #007bff;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            
+            /* Avatar Animation Setup */
+            transition: transform 0.3s ease;
+        }
+
+        /* Avatar Animation on Card Hover */
+        .card:hover .avatar {
+            transform: scale(1.1) rotate(360deg); /* Zoom slightly and Spin */
+            background-color: #0056b3;
+        }
+
+        /* Typography */
+        h2 {
+            margin: 10px 0 5px 0;
+            color: #222;
+            font-size: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .branch { font-weight: 600; color: #007bff; }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="card">
+            <div class="avatar">JK</div>
+            <h2>Jeet Kumar</h2>
+            <p class="branch">B.Tech - CSE</p>
+            <p>Roll No: 21CS1007</p>
+            <p>1st Year</p>
+        </div>
+
+        <div class="card">
+            <div class="avatar">AR</div>
+            <h2>Asha Rani</h2>
+            <p class="branch">B.Tech - IT</p>
+            <p>Roll No: 21IT1012</p>
+            <p>1st Year</p>
+        </div>
+
+        <div class="card">
+            <div class="avatar">RK</div>
+            <h2>Rohit Kumar</h2>
+            <p class="branch">B.Tech - ECE</p>
+            <p>Roll No: 21EC1009</p>
+            <p>1st Year</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
