@@ -749,6 +749,22 @@ body {
     animation: pulse 2s infinite;
 }
 
+.project-badge.security {
+    background: rgba(6, 182, 212, 0.2);
+    color: #06b6d4;
+}
+
+.project-badge.climate {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+.project-badge.ongoing {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    animation: pulse 2s infinite;
+}
+
 @keyframes pulse {
 
     0%,
