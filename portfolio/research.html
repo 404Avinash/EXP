@@ -243,6 +243,289 @@
             .research-header {
                 flex-direction: column;
             }
+
+            .research-showcase .jellyfish-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .buffer-layers {
+                flex-direction: column;
+            }
+        }
+
+        /* Research Showcase Styles */
+        .research-showcase {
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.03), rgba(34, 211, 238, 0.03));
+            border: 1px solid rgba(34, 197, 94, 0.15);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-showcase.netra-theme {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.03), rgba(139, 92, 246, 0.03));
+            border-color: rgba(59, 130, 246, 0.15);
+        }
+
+        .research-showcase.bittachon-theme {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.03), rgba(236, 72, 153, 0.03));
+            border-color: rgba(168, 85, 247, 0.15);
+        }
+
+        .research-showcase.yarok-theme {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.03), rgba(16, 185, 129, 0.03));
+            border-color: rgba(34, 197, 94, 0.15);
+        }
+
+        .showcase-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .showcase-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 16px;
+            border: 1px solid;
+        }
+
+        .showcase-tag.radar {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .showcase-tag.shield {
+            color: #a855f7;
+            background: rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .showcase-tag.green {
+            color: #22c55e;
+            background: rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        .showcase-pulse {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+
+        .showcase-pulse.radar {
+            background: #3b82f6;
+        }
+
+        .showcase-pulse.shield {
+            background: #a855f7;
+        }
+
+        .showcase-pulse.green {
+            background: #22c55e;
+        }
+
+        @keyframes pulseDot {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+        }
+
+        .research-showcase .jellyfish-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .research-showcase .jelly-card {
+            background: rgba(10, 15, 20, 0.6);
+            border: 1px solid rgba(34, 211, 238, 0.15);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            animation: jellyFloat 6s ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+            transition: all 0.3s ease;
+        }
+
+        .research-showcase .jelly-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .research-showcase .jelly-card.radar-theme {
+            border-color: rgba(59, 130, 246, 0.25);
+        }
+
+        .research-showcase .jelly-card.green-theme {
+            border-color: rgba(34, 197, 94, 0.25);
+        }
+
+        @keyframes jellyFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .research-showcase .jelly-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #22c55e, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .research-showcase .jelly-card.radar-theme .jelly-value {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .research-showcase .jelly-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 4px;
+        }
+
+        .research-showcase .jelly-sub {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            margin-top: 2px;
+        }
+
+        /* Pillars Grid for Bittachon */
+        .research-showcase .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .research-showcase .pillar-card {
+            background: rgba(10, 15, 20, 0.6);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            animation: jellyFloat 6s ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+            transition: all 0.3s ease;
+        }
+
+        .research-showcase .pillar-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+
+        .research-showcase .pillar-icon {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+
+        .research-showcase .pillar-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .research-showcase .pillar-desc {
+            font-size: 0.7rem;
+            color: #a855f7;
+            font-family: var(--font-mono);
+        }
+
+        /* Buffer Layers for YAROK */
+        .research-showcase .buffer-layers {
+            display: flex;
+            gap: 10px;
+        }
+
+        .research-showcase .layer {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--layer-color, #22c55e);
+            border-left: 3px solid var(--layer-color, #22c55e);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .research-showcase .layer:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(3px);
+        }
+
+        .research-showcase .layer-icon {
+            font-size: 1.1rem;
+        }
+
+        .research-showcase .layer-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Capabilities Row for NETRA */
+        .research-showcase .capabilities-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .research-showcase .cap-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .research-showcase .cap-item:hover {
+            background: rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .research-showcase .cap-icon {
+            font-size: 0.9rem;
+        }
+
+        .research-showcase .cap-text {
+            color: var(--text-primary);
+            font-weight: 500;
         }
     </style>
 </head>
@@ -294,6 +577,40 @@
                 simulation. Covers the integration of multi-sensor data fusion, terrain analysis,
                 probabilistic anomaly detection, and UAV reconnaissance integration for IED detection.
             </p>
+
+            <!-- NETRA Showcase -->
+            <div class="research-showcase netra-theme">
+                <div class="showcase-header">
+                    <span class="showcase-tag radar">🛡️ Digital Twin</span>
+                    <span class="showcase-pulse radar"></span>
+                </div>
+                <div class="jellyfish-grid">
+                    <div class="jelly-card radar-theme" style="--delay: 0s;">
+                        <div class="jelly-value">Real-Time</div>
+                        <div class="jelly-label">Threat Scoring</div>
+                        <div class="jelly-sub">Live Dashboard</div>
+                    </div>
+                    <div class="jelly-card radar-theme" style="--delay: 0.15s;">
+                        <div class="jelly-value">5+</div>
+                        <div class="jelly-label">Sensor Signals</div>
+                        <div class="jelly-sub">Multi-Source Fusion</div>
+                    </div>
+                    <div class="jelly-card radar-theme" style="--delay: 0.3s;">
+                        <div class="jelly-value">360°</div>
+                        <div class="jelly-label">Awareness</div>
+                        <div class="jelly-sub">UAV Integration</div>
+                    </div>
+                </div>
+                <div class="capabilities-row">
+                    <div class="cap-item"><span class="cap-icon">📍</span><span class="cap-text">Route Sim</span></div>
+                    <div class="cap-item"><span class="cap-icon">🔥</span><span class="cap-text">Heatmaps</span></div>
+                    <div class="cap-item"><span class="cap-icon">⚠️</span><span class="cap-text">Anomaly
+                            Detection</span></div>
+                    <div class="cap-item"><span class="cap-icon">📊</span><span class="cap-text">Probability</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="research-tags">
                 <span class="research-tag">Digital Twin</span>
                 <span class="research-tag">Python</span>
@@ -329,6 +646,40 @@
                 ore beneficiation for Indian hematite, and oxygen monetization achieving CBAM-compliance
                 at &lt;0.4 tCO₂e/tonne.
             </p>
+
+            <!-- YAROK Showcase -->
+            <div class="research-showcase yarok-theme">
+                <div class="showcase-header">
+                    <span class="showcase-tag green">🌱 Green Steel</span>
+                    <span class="showcase-pulse green"></span>
+                </div>
+                <div class="jellyfish-grid">
+                    <div class="jelly-card green-theme" style="--delay: 0s;">
+                        <div class="jelly-value">75-80%</div>
+                        <div class="jelly-label">Electrolyser Util.</div>
+                        <div class="jelly-sub">vs typical 30-45%</div>
+                    </div>
+                    <div class="jelly-card green-theme" style="--delay: 0.15s;">
+                        <div class="jelly-value">&lt;0.4</div>
+                        <div class="jelly-label">tCO₂e/tonne</div>
+                        <div class="jelly-sub">CBAM Compliant</div>
+                    </div>
+                    <div class="jelly-card green-theme" style="--delay: 0.3s;">
+                        <div class="jelly-value">₹119Cr</div>
+                        <div class="jelly-label">O₂ Revenue/yr</div>
+                        <div class="jelly-sub">Hidden Value</div>
+                    </div>
+                </div>
+                <div class="buffer-layers">
+                    <div class="layer" style="--layer-color: #fbbf24;"><span class="layer-icon">⚡</span><span
+                            class="layer-name">Electrical</span></div>
+                    <div class="layer" style="--layer-color: #22c55e;"><span class="layer-icon">🧪</span><span
+                            class="layer-name">Chemical (H₂)</span></div>
+                    <div class="layer" style="--layer-color: #ef4444;"><span class="layer-icon">🔥</span><span
+                            class="layer-name">Thermal</span></div>
+                </div>
+            </div>
+
             <div class="research-tags">
                 <span class="research-tag">H₂-DRI</span>
                 <span class="research-tag">Electrolysis</span>
@@ -364,6 +715,32 @@
                 Consistency (audio-visual sync analysis). Features "Trust Timeline" — an AI Nutrition Label
                 for media authenticity verification.
             </p>
+
+            <!-- Bittachon Showcase -->
+            <div class="research-showcase bittachon-theme">
+                <div class="showcase-header">
+                    <span class="showcase-tag shield">🛡️ Trust Verification</span>
+                    <span class="showcase-pulse shield"></span>
+                </div>
+                <div class="pillars-grid">
+                    <div class="pillar-card" style="--delay: 0s;">
+                        <div class="pillar-icon">💓</div>
+                        <div class="pillar-title">Biological Invariance</div>
+                        <div class="pillar-desc">rPPG Pulse Detection</div>
+                    </div>
+                    <div class="pillar-card" style="--delay: 0.15s;">
+                        <div class="pillar-icon">🔐</div>
+                        <div class="pillar-title">Digital Provenance</div>
+                        <div class="pillar-desc">C2PA Validation</div>
+                    </div>
+                    <div class="pillar-card" style="--delay: 0.3s;">
+                        <div class="pillar-icon">🎬</div>
+                        <div class="pillar-title">Physical Consistency</div>
+                        <div class="pillar-desc">SyncNet Analysis</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="research-tags">
                 <span class="research-tag">rPPG</span>
                 <span class="research-tag">C2PA</span>
