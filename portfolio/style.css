@@ -1383,6 +1383,293 @@ body {
 }
 
 /* ========================================
+   NETRA RADAR THEME
+======================================== */
+.netra-showcase {
+    margin: 24px 0;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-tag.radar {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.jelly-card.radar-theme {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.jelly-card.radar-theme.featured {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.1));
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.jelly-glow.radar {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
+}
+
+.capabilities-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(10, 15, 20, 0.6);
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.cap-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.cap-item:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+}
+
+.cap-icon {
+    font-size: 1.1rem;
+}
+
+.cap-text {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ========================================
+   BITTACHON SHIELD THEME
+======================================== */
+.bittachon-showcase {
+    margin: 24px 0;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(236, 72, 153, 0.05));
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-tag.shield {
+    color: #a855f7;
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.showcase-pulse.shield {
+    background: #a855f7;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.pillar-card {
+    background: rgba(10, 15, 20, 0.8);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    animation: jellyFloat 6s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    transition: all 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(168, 85, 247, 0.5);
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.pillar-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.pillar-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.pillar-desc {
+    font-size: 0.8rem;
+    color: #a855f7;
+    font-family: var(--font-mono);
+}
+
+.pillar-detail {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* Trust Timeline */
+.trust-timeline {
+    background: rgba(10, 15, 20, 0.6);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-header {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.timeline-bar {
+    display: flex;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.timeline-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.timeline-segment.verified {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    color: white;
+}
+
+.timeline-segment.warning {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+    color: white;
+}
+
+.timeline-segment.unknown {
+    background: linear-gradient(90deg, #6b7280, #4b5563);
+    color: white;
+}
+
+.timeline-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+/* ========================================
+   YAROK GREEN THEME
+======================================== */
+.yarok-showcase {
+    margin: 24px 0;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(16, 185, 129, 0.05));
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-tag.green {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.showcase-pulse.green {
+    background: #22c55e;
+}
+
+.jelly-card.green-theme {
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.jelly-card.green-theme.featured {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.1));
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+.jelly-glow.green {
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent 70%);
+}
+
+/* Buffer Layers */
+.buffer-layers {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(10, 15, 20, 0.6);
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.layer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--layer-color, #22c55e);
+    border-left: 4px solid var(--layer-color, #22c55e);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.layer:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+}
+
+.layer-icon {
+    font-size: 1.3rem;
+}
+
+.layer-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buffer-layers {
+        flex-direction: column;
+    }
+
+    .capabilities-row {
+        justify-content: center;
+    }
+}
+
+/* ========================================
    ACHIEVEMENTS SECTION
 ======================================== */
 .achievements {
