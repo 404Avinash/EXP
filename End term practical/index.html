@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Result Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #2c3e50;
+            font-size: 15px;
+        }
+
+        caption {
+            caption-side: top;
+            font-size: 26px;
+            font-weight: 700;
+            color: #2c3e50;
+            padding: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #3498db;
+            margin-bottom: 10px;
+        }
+
+        caption span {
+            display: block;
+            font-size: 14px;
+            color: #7f8c8d;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            text-transform: none;
+        }
+
+        thead th {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            padding: 14px 12px;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            border: 1px solid #1a252f;
+        }
+
+        tbody td {
+            padding: 12px 14px;
+            text-align: center;
+            border: 1px solid #bdc3c7;
+            color: #2c3e50;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f0f3f7;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        tbody tr:hover {
+            background-color: #dfe6f0;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Student name column */
+        td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* Rowspan cells styling */
+        td[rowspan] {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+            vertical-align: middle;
+            letter-spacing: 1px;
+        }
+
+        /* Colspan header cells in thead */
+        thead th[colspan] {
+            background: linear-gradient(135deg, #1a252f, #2c3e50);
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        /* Grade column */
+        .grade {
+            font-weight: 700;
+            border-radius: 4px;
+            padding: 4px 10px;
+        }
+
+        .grade-a {
+            color: #27ae60;
+        }
+
+        .grade-b {
+            color: #2980b9;
+        }
+
+        .grade-c {
+            color: #f39c12;
+        }
+
+        /* Total & Percentage */
+        .total {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .percentage {
+            font-weight: 700;
+            color: #8e44ad;
+        }
+
+        /* Result column */
+        .pass {
+            color: #fff;
+            background: #27ae60;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        /* Table footer */
+        tfoot td {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ecf0f1;
+            font-weight: 600;
+            padding: 12px;
+            font-size: 13px;
+            text-align: center;
+            border: 1px solid #1a252f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <table>
+            <caption>
+                📚 Delhi Public School — Annual Examination Results
+                <span>Academic Session 2025–2026 | Class X – Section A</span>
+            </caption>
+
+            <!-- ============ TABLE HEADER ============ -->
+            <thead>
+                <tr>
+                    <th rowspan="2">Roll No.</th>
+                    <th rowspan="2">Student Name</th>
+                    <th colspan="3">Science</th>
+                    <th colspan="2">Mathematics</th>
+                    <th colspan="2">Languages</th>
+                    <th rowspan="2">Social Science</th>
+                    <th rowspan="2">Total (500)</th>
+                    <th rowspan="2">Percentage</th>
+                    <th rowspan="2">Grade</th>
+                    <th rowspan="2">Result</th>
+                </tr>
+                <tr>
+                    <!-- Science sub-columns -->
+                    <th>Physics</th>
+                    <th>Chemistry</th>
+                    <th>Biology</th>
+                    <!-- Mathematics sub-columns -->
+                    <th>Theory</th>
+                    <th>Practical</th>
+                    <!-- Languages sub-columns -->
+                    <th>English</th>
+                    <th>Hindi</th>
+                </tr>
+            </thead>
+
+            <!-- ============ TABLE BODY ============ -->
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>Aarav Sharma</td>
+                    <td>88</td>
+                    <td>82</td>
+                    <td>90</td>
+                    <td>78</td>
+                    <td>20</td>
+                    <td>85</td>
+                    <td>79</td>
+                    <td>88</td>
+                    <td class="total">430</td>
+                    <td class="percentage">86%</td>
+                    <td><span class="grade grade-a">A</span></td>
+                    <td><span class="pass">Pass</span></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Priya Patel</td>
+                    <td>95</td>
+                    <td>91</td>
+                    <td>93</td>
+                    <td>90</td>
+                    <td>25</td>
+                    <td>92</td>
+                    <td>88</td>
+                    <td>94</td>
+                    <td class="total">468</td>
+                    <td class="percentage">93.6%</td>
+                    <td><span class="grade grade-a">A+</span></td>
+                    <td><span class="pass">Pass</span></td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Rohan Gupta</td>
+                    <td>72</td>
+                    <td>68</td>
+                    <td>75</td>
+                    <td>65</td>
+                    <td>18</td>
+                    <td>70</td>
+                    <td>73</td>
+                    <td>71</td>
+                    <td class="total">362</td>
+                    <td class="percentage">72.4%</td>
+                    <td><span class="grade grade-b">B</span></td>
+                    <td><span class="pass">Pass</span></td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Sneha Verma</td>
+                    <td>80</td>
+                    <td>85</td>
+                    <td>78</td>
+                    <td>82</td>
+                    <td>22</td>
+                    <td>88</td>
+                    <td>81</td>
+                    <td>83</td>
+                    <td class="total">419</td>
+                    <td class="percentage">83.8%</td>
+                    <td><span class="grade grade-a">A</span></td>
+                    <td><span class="pass">Pass</span></td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>Aditya Kumar</td>
+                    <td>60</td>
+                    <td>55</td>
+                    <td>65</td>
+                    <td>58</td>
+                    <td>15</td>
+                    <td>62</td>
+                    <td>68</td>
+                    <td>60</td>
+                    <td class="total">308</td>
+                    <td class="percentage">61.6%</td>
+                    <td><span class="grade grade-c">C</span></td>
+                    <td><span class="pass">Pass</span></td>
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td>Kavya Reddy</td>
+                    <td>91</td>
+                    <td>88</td>
+                    <td>86</td>
+                    <td>85</td>
+                    <td>23</td>
+                    <td>90</td>
+                    <td>84</td>
+                    <td>89</td>
+                    <td class="total">446</td>
+                    <td class="percentage">89.2%</td>
+                    <td><span class="grade grade-a">A+</span></td>
+                    <td><span class="pass">Pass</span></td>
+                </tr>
+            </tbody>
+
+            <!-- ============ TABLE FOOTER ============ -->
+            <tfoot>
+                <tr>
+                    <td colspan="10">Class Average</td>
+                    <td>405.5</td>
+                    <td>81.1%</td>
+                    <td colspan="2">Overall: A</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</body>
+
+</html>
