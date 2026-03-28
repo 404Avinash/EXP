@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates | Avinash Jha</title>
+    <meta name="description" content="Certificates and achievements of Avinash Jha - Defence-tech innovator">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Certificate Gallery Specific Styles */
+        .gallery-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+        }
+
+        .gallery-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #22d3ee, #06b6d4, #22c55e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gallery-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding: 8px 16px;
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(34, 211, 238, 0.1);
+            border-color: var(--accent-primary);
+        }
+
+        .certificates-container {
+            padding: 40px 0 100px;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .certificate-card {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--glass-bg);
+            border: 1px solid rgba(34, 211, 238, 0.15);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15);
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .certificate-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .certificate-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(10, 13, 18, 0.95));
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-card:hover .certificate-overlay {
+            transform: translateY(0);
+        }
+
+        .certificate-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .certificate-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 13, 18, 0.98);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .lightbox.active {
+            display: flex;
+            animation: lightboxFadeIn 0.3s ease;
+        }
+
+        @keyframes lightboxFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            border-radius: 50%;
+            color: #ef4444;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 50%;
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .lightbox-prev {
+            left: -70px;
+        }
+
+        .lightbox-next {
+            right: -70px;
+        }
+
+        .lightbox-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .lightbox-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .lightbox-counter {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--accent-primary);
+            margin-top: 8px;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AJ<span class="accent">.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="certificates.html" class="active">Certificates</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero -->
+    <header class="gallery-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Back to Portfolio
+            </a>
+            <h1 class="gallery-title">Certificates & Achievements</h1>
+            <p class="gallery-subtitle">
+                A collection of certifications, awards, and achievements earned through aerospace competitions,
+                hackathons, and technical programs.
+            </p>
+        </div>
+    </header>
+
+    <!-- Certificates Grid -->
+    <section class="certificates-container">
+        <div class="certificates-grid" id="certificatesGrid">
+            <!-- Certificates will be dynamically loaded here -->
+        </div>
+
+        <!-- Empty State (shown when no certificates) -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-state-icon">📜</div>
+            <h3>No Certificates Yet</h3>
+            <p>Add your certificate images to the /certificates folder to display them here.</p>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">❮</button>
+            <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">❯</button>
+            <img id="lightboxImage" src="" alt="">
+            <div class="lightbox-info">
+                <div class="lightbox-title" id="lightboxTitle"></div>
+                <div class="lightbox-counter" id="lightboxCounter"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Certificate data - Priority certificates (A folder) first, then main folder
+        const certificates = [
+            // ===== PRIORITY CERTIFICATES (FOLDER A) =====
+            { file: 'A/1.jpg', name: 'Certificate 1', date: '2024' },
+            { file: 'A/2.jpg', name: 'Certificate 2', date: '2024' },
+            { file: 'A/3.jpg', name: 'Certificate 3', date: '2024' },
+            { file: 'A/4.jpg', name: 'Certificate 4', date: '2024' },
+            { file: 'A/5.jpg', name: 'Certificate 5', date: '2024' },
+            { file: 'A/6.jpg', name: 'Certificate 6', date: '2024' },
+            { file: 'A/7.jpg', name: 'Certificate 7', date: '2024' },
+            { file: 'A/8.jpg', name: 'Certificate 8', date: '2024' },
+
+            // ===== OTHER CERTIFICATES =====
+            { file: 'algo.jpg', name: 'Algorithm Competition', date: '2024' },
+            { file: 'case crux.jpg', name: 'Case Crux', date: '2024' },
+            { file: 'cuuu.jpg', name: 'Certificate', date: '2024' },
+            { file: 'equity re.jpg', name: 'Equity Research', date: '2024' },
+            { file: 'f it.jpg', name: 'Certificate', date: '2024' },
+            { file: 'i im.jpg', name: 'Certificate', date: '2024' },
+            { file: 'ideaa.jpg', name: 'Idea Competition', date: '2024' },
+            { file: 'pmx.jpg', name: 'PMX Certificate', date: '2024' },
+            { file: 'qd.jpg', name: 'Certificate', date: '2024' },
+            { file: 'qdd.jpg', name: 'Certificate', date: '2024' },
+            { file: 'quantaaa.jpg', name: 'Quanta', date: '2024' },
+            { file: 'slayer.jpg', name: 'Slayer', date: '2024' },
+            { file: 'synergy.jpg', name: 'Synergy', date: '2024' },
+            { file: 'udgam.jpg', name: 'Udgam', date: '2024' },
+            { file: 'work work.jpg', name: 'Workshop Certificate', date: '2024' },
+            { file: 'work.jpg', name: 'Workshop', date: '2024' },
+        ];
+
+        const grid = document.getElementById('certificatesGrid');
+        const emptyState = document.getElementById('emptyState');
+        let currentIndex = 0;
+
+        // Render certificates
+        function renderCertificates() {
+            if (certificates.length === 0) {
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            certificates.forEach((cert, index) => {
+                const card = document.createElement('div');
+                card.className = 'certificate-card';
+                card.onclick = () => openLightbox(index);
+                card.innerHTML = `
+                    <img src="certificates/${cert.file}" alt="${cert.name}" loading="lazy" 
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-secondary);\\'>Image not found</div>';">
+                    <div class="certificate-overlay">
+                        <div class="certificate-name">${cert.name}</div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Lightbox functions
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightbox();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + certificates.length) % certificates.length;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            const cert = certificates[currentIndex];
+            document.getElementById('lightboxImage').src = `certificates/${cert.file}`;
+            document.getElementById('lightboxTitle').textContent = cert.name;
+            document.getElementById('lightboxCounter').textContent = `${currentIndex + 1} / ${certificates.length}`;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Click outside to close
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Initialize
+        renderCertificates();
+    </script>
+</body>
+
+</html>
