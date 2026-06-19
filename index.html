@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <h1>Simple Interest Calculator</h1>
+    
+    <label>Principal: </label>
+    <input type="number" id="principal" step="0.01">
+    <br><br>
+    
+    <label>Rate (%) per Annum: </label>
+    <input type="number" id="rate" step="0.01">
+    <br><br>
+    
+    <label>Time (years): </label>
+    <input type="number" id="time" step="0.01">
+    <br><br>
+    
+    <button onclick="calculateSI()">Calculate</button>
+    <br><br>
+    
+    <div id="result"></div>
+
+    <script>
+        function calculateSI() {
+            const p = parseFloat(document.getElementById('principal').value);
+            const r = parseFloat(document.getElementById('rate').value);
+            const t = parseFloat(document.getElementById('time').value);
+
+            if (!p || !r || !t) {
+                document.getElementById('result').textContent = 'Please fill all fields';
+                return;
+            }
+
+            const si = (p * r * t) / 100;
+            const amount = p + si;
+
+            document.getElementById('result').innerHTML = 
+                `SI: ${si.toFixed(2)}<br>Total Amount: ${amount.toFixed(2)}`;
+        }
+
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keypress', e => e.key === 'Enter' && calculateSI());
+        });
+    </script>
+</body>
+</html>
