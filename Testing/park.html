@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Park Entry Form</title>
+  <style>
+    form { width:320px; margin:auto; border:1px solid #888; border-radius:10px; background:#e9fbe9; padding:20px; }
+    label { display:block; margin-top:6px; }
+    input, select, textarea { width:100%; margin-bottom:10px; padding:6px; }
+    button { background:green; color:white; border:none; padding:8px; border-radius:5px; }
+  </style>
+</head>
+<body>
+  <form>
+    <h2 align="center">🌳 Park Entry Booking</h2>
+
+    <label for="visitor">Visitor Name:</label>
+    <input type="text" id="visitor" placeholder="Enter full name">
+
+    <label for="group">No. of Visitors:</label>
+    <input type="number" id="group" min="1" max="50">
+
+    <label for="date">Visit Date:</label>
+    <input type="date" id="date">
+
+    <label for="ticket">Ticket Type:</label>
+    <select id="ticket">
+      <option>Regular Entry</option>
+      <option>Photography Pass</option>
+      <option>Boating Package</option>
+    </select>
+
+    <label>Include Parking?</label>
+    <input type="radio" name="park" id="yes"> <label for="yes">Yes</label>
+    <input type="radio" name="park" id="no"> <label for="no">No</label>
+
+    <label for="comments">Comments:</label>
+    <textarea id="comments" rows="3"></textarea>
+
+    <button type="submit">Get Tickets</button>
+  </form>
+</body>
+</html>

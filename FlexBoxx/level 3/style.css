@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  background: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: 80px;
+  align-items: center;
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background: tomato;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}

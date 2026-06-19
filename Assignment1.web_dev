@@ -1,0 +1,20 @@
+<! DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My First Html Page</title>
+</head>
+<body>
+<h1>
+Name - Avinash Jha
+<br>
+Father's Name - Kamlesh Jha
+<br>
+Mother's Name - Anita Jha
+<br>
+</h1>
+<h2>CSE - 16</h2>
+<p>Sector-10A <br>Chiranjiv vihar <br>Ghaziabad , India</p>
+</body>
+</html>

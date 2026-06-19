@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Civil Engineering Timetable</title>
+  <style>
+    table, th, td { border: 1px solid #444; border-collapse: collapse; padding: 5px; text-align: center; }
+    th { background: #eee; }
+  </style>
+</head>
+<body>
+
+<table>
+  <caption>Civil Engineering - Semester IV</caption>
+  <thead>
+    <tr>
+      <th rowspan="2">Day</th>
+      <th colspan="4">Lecture Schedule</th>
+    </tr>
+    <tr>
+      <th>9–10</th><th>10–11</th><th>12–1</th><th>2–3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Mon</th>
+      <td colspan="2">Structural Analysis</td>
+      <td>Surveying</td>
+      <td>Break</td>
+    </tr>
+    <tr>
+      <th>Tue</th>
+      <td>Concrete Tech</td>
+      <td>Maths</td>
+      <td rowspan="2">Lab (Survey)</td>
+      <td>Break</td>
+    </tr>
+    <tr>
+      <th>Wed</th>
+      <td colspan="2">Hydraulics</td>
+      <td>Design Project</td>
+    </tr>
+    <tr>
+      <th>Thu</th>
+      <td>Soil Mechanics</td>
+      <td colspan="3">
+        <!-- Nested Table for Lab -->
+        <table>
+          <tr><th colspan="2">Lab Details</th></tr>
+          <tr><td>Test</td><td>Type</td></tr>
+          <tr><td>Triaxial</td><td>Practical</td></tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

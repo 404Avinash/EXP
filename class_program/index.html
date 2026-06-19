@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to DOM</title>
+</head>
+<body>
+    <h1 id="heading">Welcome to the DOM</h1>
+    <p class="paragraph">This is a paragraph.</p>
+    <script>
+        let newheading=document.getElementById("heading");
+newheading.textContent="dom manipulation in javascript";
+newheading.style.color="blue";
+newheading.style.fontSize="50px";
+
+let paragraphs= document.getElementsByClassName("paragraph");
+paragraphs[0].innerHTML="<strong>this paragraph has been edited</strong>";
+paragraphs[0].style.color="green";
+paragraphs[0].style.fontSize="20px";
+
+let newDiv=document.createElement("div");
+newDiv.textContent="this is a new div elelment";
+document.body.appendChild(newDiv);
+
+function addList(list)
+{
+    let newList = document.createElement("ul");
+    for(let i = 0; i < list.length; i++) {
+        let listItem = document.createElement("li");
+        listItem.textContent = list[i];
+        newList.appendChild(listItem);
+    }
+    document.body.appendChild(newList);
+}
+
+addList(["Item 1", "Item 2", "Item 3"]);
+    </script>
+</body>
+</html>

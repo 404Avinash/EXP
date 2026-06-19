@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class test - 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            margin: 0;
+        }
+        .table-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        caption {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            border: 2px solid #333;
+        }
+        td {
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            text-align: center;
+            font-size: 15px;
+        }
+        td:first-child {
+            font-weight: 600;
+            color: #667eea;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9ff;
+        }
+        tr:hover {
+            background-color: #e8ecff;
+            transition: background-color 0.3s ease;
+        }
+        .total {
+            font-weight: bold;
+            background-color: #fff3cd;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <caption><b><u>School Result Table</u></b></caption>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th colspan="2">Core Subjects</th>
+                <th colspan="2">Applied Sciences</th>
+                <th rowspan="2">EVS</th>
+                <th rowspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Maths</th>
+                <th>Electrical</th>
+                <th>AI</th>
+                <th>Physics</th>
+            </tr>
+            <tr>
+                <td>Ayush</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td class="total">500</td>
+            </tr>
+            <tr>
+                <td>Avinash</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td class="total">475</td>
+            </tr>
+            <tr>
+                <td>Avish</td>
+                <td>75</td>
+                <td>68</td>
+                <td>22</td>
+                <td>77</td>
+                <td>25</td>
+                <td class="total">267</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

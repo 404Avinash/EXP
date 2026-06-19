@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electronics Timetable</title>
+  <style>
+    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 6px; text-align: center; }
+    caption { font-weight: bold; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<table>
+  <caption>B.Tech ECE - Semester II</caption>
+  <tr>
+    <th rowspan="2">Day</th>
+    <th colspan="4">Schedule</th>
+  </tr>
+  <tr>
+    <th>9–10</th><th>10–11</th><th>11–12</th><th>2–3</th>
+  </tr>
+
+  <tr>
+    <th>Mon</th>
+    <td>Analog Circuits</td>
+    <td>Digital Logic</td>
+    <td>Break</td>
+    <td>
+      <!-- Nested Table for Lab -->
+      <table>
+        <tr><th colspan="2">Lab Session</th></tr>
+        <tr><td>Experiment</td><td>Topic</td></tr>
+        <tr><td>1</td><td>Amplifier</td></tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Tue</th>
+    <td colspan="2">Communication Systems</td>
+    <td>Break</td>
+    <td>Microprocessor</td>
+  </tr>
+
+  <tr>
+    <th>Wed</th>
+    <td>Signals</td>
+    <td>Break</td>
+    <td colspan="2">Project Discussion</td>
+  </tr>
+</table>
+
+</body>
+</html>

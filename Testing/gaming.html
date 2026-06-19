@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming Tournament Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 10px;
+      width: 350px;
+      box-shadow: 0 0 10px #000;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: none;
+      border-radius: 5px;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      width: auto;
+    }
+    textarea {
+      resize: none;
+    }
+    button {
+      background: #00c9ff;
+      color: #000;
+      border: none;
+      padding: 10px 15px;
+      width: 100%;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #92fe9d;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <h2>🎮 Gaming Tournament Registration</h2>
+
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" placeholder="Enter your full name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="example@gmail.com" required>
+
+    <label for="game">Select Game:</label>
+    <select id="game" required>
+      <option value="">-- Choose your game --</option>
+      <option>Valorant</option>
+      <option>CS:GO</option>
+      <option>Call of Duty</option>
+      <option>BGMI</option>
+      <option>FIFA</option>
+    </select>
+
+    <label>Category:</label>
+    <input type="radio" name="category" id="solo"> <label for="solo">Solo</label>
+    <input type="radio" name="category" id="duo"> <label for="duo">Duo</label>
+    <input type="radio" name="category" id="squad"> <label for="squad">Squad</label>
+
+    <label for="team">Team Name (if applicable):</label>
+    <input type="text" id="team" placeholder="Enter team name">
+
+    <label>Equipment Preference:</label>
+    <input type="checkbox" id="mouse"> <label for="mouse">Bring own mouse</label><br>
+    <input type="checkbox" id="keyboard"> <label for="keyboard">Bring own keyboard</label><br>
+    <input type="checkbox" id="headset"> <label for="headset">Bring own headset</label>
+
+    <label for="about">Why do you want to join?</label>
+    <textarea id="about" rows="3" placeholder="Your short motivation..."></textarea>
+
+    <button type="submit">Register Now</button>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Admission Form</title>
+  <style>
+    form { width:350px; margin:auto; border:1px solid #ccc; padding:20px; background:#f0f8ff; border-radius:10px; }
+    label { display:block; margin:6px 0 3px; }
+    input, select, textarea { width:100%; padding:6px; margin-bottom:10px; }
+    button { background:#0a6; color:white; border:none; padding:8px 12px; border-radius:5px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <form>
+    <h2 align="center">🏫 School Admission Form</h2>
+
+    <label for="sname">Student Name:</label>
+    <input type="text" id="sname" placeholder="Full name" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" min="3" max="18">
+
+    <label for="grade">Applying for Grade:</label>
+    <select id="grade">
+      <option>Nursery</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+
+    <label for="parent">Parent Name:</label>
+    <input type="text" id="parent" placeholder="Parent/Guardian name">
+
+    <label for="contact">Contact No.:</label>
+    <input type="tel" id="contact" placeholder="10-digit phone">
+
+    <label for="address">Address:</label>
+    <textarea id="address" rows="3"></textarea>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</body>
+</html>

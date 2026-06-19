@@ -1,0 +1,30 @@
+body{
+
+   font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
+    background-color: rgb(209, 202, 202);
+
+}
+
+.container{
+    display: flex;
+    flex-direction:column;
+    background-color: white;
+    padding:10px;
+   border: 1px solid white;
+}
+
+.box {
+
+background-color: greenyellow;
+color:aliceblue;
+padding: 20px;
+border-radius:5px;
+
+}
+
+.box1 {background-color: palegreen;}
+.box2 {background-color: violet;}
+.box3 {background-color: orange;}
+.box4 {background-color: red;}
+.box5 {background-color: rosybrown;}

@@ -1,0 +1,89 @@
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4; /* Halka grey background */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Container for all products - Ye main magic hai responsiveness ka */
+.product-grid {
+    display: grid;
+    /* Auto-fit ka matlab: Jitne cards fit ho sakein ek line mein, utne dikhao */
+    /* minmax(250px, 1fr) ka matlab: Card kam se kam 250px chouda hoga, usse chota nahi */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Cards ke beech mein gap */
+    max-width: 1200px;
+    margin: 0 auto; /* Center align the grid */
+}
+
+/* Individual Card Styling */
+.product-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thoda sa shadow taaki card utha hua lage */
+    transition: transform 0.3s ease; /* Smooth hover animation */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hover effect: Jab mouse le jaoge to card thoda upar uthega */
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Product Image */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Image ratio kharab nahi hoga */
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+/* Product Title */
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #222;
+}
+
+/* Product Description */
+.product-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Price Tag */
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60; /* Green color for money */
+    margin: 15px 0;
+}
+
+/* Buy Button */
+.btn {
+    display: inline-block;
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Link ke neeche ki line hatane ke liye */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

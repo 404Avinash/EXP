@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Selector Worksheet — Clean Integrated Version</title>
+
+<style>
+/* ---------------------------
+   GLOBAL BOILERPLATE STYLING
+---------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f7fa;
+}
+
+section {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* ---------------------------
+      Q1 → Q9  CSS ANSWERS
+---------------------------- */
+
+/* Q1 — Universal Selector */
+* {
+  font-family: Arial;
+}
+
+/* Q2 — Element Selectors */
+.q2 h2 {
+  color: red;
+}
+
+.q2 p {
+  color: green;
+}
+
+/* Q3 — Class Selector */
+.highlight {
+  background: yellow;
+  font-weight: bold;
+}
+
+/* Q4 — ID Selector */
+#main-title {
+  color: purple;
+  text-align: center;
+}
+
+/* Q5 — Group Selector */
+.q5 h1, .q5 h2, .q5 p {
+  color: blue;
+}
+
+/* Q6 — Descendant Selector */
+.q6 div p {
+  color: brown;
+}
+
+/* Q7 — Child Selector */
+.q7 div > p {
+  color: green;
+}
+
+/* Q8 — Adjacent Sibling Selector */
+.q8 h2 + p {
+  color: red;
+}
+
+/* Q9 — General Sibling Selector */
+.q9 h3 ~ p {
+  background: #eee;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>CSS Selectors Worksheet — All Questions (Integrated)</h1>
+
+<!-- ---------------------------
+        Q1 (Separate)
+---------------------------- -->
+<section class="q1">
+<h2>Q1 — Universal Selector</h2>
+
+<h3>Welcome</h3>
+<p>This is a paragraph.</p>
+<span>Some inline text.</span>
+
+</section>
+
+<!-- ---------------------------
+        Q2 (Separate)
+---------------------------- -->
+<section class="q2">
+<h2>Q2 — Element Selector</h2>
+
+<h2>My Heading</h2>
+<p>This is paragraph one.</p>
+<p>This is paragraph two.</p>
+
+</section>
+
+<!-- ---------------------------
+        Q3 (Separate)
+---------------------------- -->
+<section class="q3">
+<h2>Q3 — Class Selector</h2>
+
+<p class="highlight">This paragraph is important.</p>
+<p>This one is normal.</p>
+<h3 class="highlight">Highlighted heading</h3>
+
+</section>
+
+<!-- ---------------------------
+        Q4 (Separate)
+---------------------------- -->
+<section class="q4">
+<h2>Q4 — ID Selector</h2>
+
+<h1 id="main-title">Welcome to CSS</h1>
+<p>This is a simple page.</p>
+
+</section>
+
+<!-- ---------------------------
+        Q5 (Separate)
+---------------------------- -->
+<section class="q5">
+<h2>Q5 — Group Selector</h2>
+
+<h1>Heading One</h1>
+<h2>Heading Two</h2>
+<p>This is a paragraph.</p>
+
+</section>
+
+<!-- ---------------------------
+        Q6 (Separate)
+---------------------------- -->
+<section class="q6">
+<h2>Q6 — Descendant Selector</h2>
+
+<div>
+  <p>Paragraph inside div</p>
+</div>
+
+<p>Paragraph outside div</p>
+
+</section>
+
+<!-- ---------------------------
+        Q7 (Separate)
+---------------------------- -->
+<section class="q7">
+<h2>Q7 — Child Selector</h2>
+
+<div>
+  <p>Direct child paragraph</p>
+  <section>
+    <p>Nested paragraph (not a direct child)</p>
+  </section>
+</div>
+
+</section>
+
+<!-- ---------------------------
+        Q8 (Separate)
+---------------------------- -->
+<section class="q8">
+<h2>Q8 — Adjacent Sibling Selector</h2>
+
+<h2>Title</h2>
+<p>First paragraph (after h2)</p>
+<p>Second paragraph</p>
+
+</section>
+
+<!-- ---------------------------
+        Q9 (Separate)
+---------------------------- -->
+<section class="q9">
+<h2>Q9 — General Sibling Selector</h2>
+
+<h3>Heading</h3>
+<p>Paragraph 1 after h3</p>
+<p>Paragraph 2 after h3</p>
+
+</section>
+
+</body>
+</html>
