@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  gap: 10px;
+  background: #fafafa;
+  border: 1px dashed #ccc;
+  margin-bottom: 20px;
+  height: 150px;
+  padding: 10px;
+}
+
+.start {
+  align-items: flex-start;
+}
+
+.center {
+  align-items: center;
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.box {
+  width: 50px;
+  background: #4caf50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.short { height: 30px; }
+.mid { height: 50px; }
+.tall { height: 80px; }
+
+.flex { flex: 0 0 60px; }

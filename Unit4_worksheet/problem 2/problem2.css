@@ -1,0 +1,19 @@
+.hero {
+  background-color: #bfdbfe; /* light blue */
+  color: #0f172a; /* dark navy-ish text color */
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin: 0 0 8px;
+  color: white; /* heading white per expected output */
+}
+
+.hero .tagline {
+  font-size: 18px;
+  margin: 0;
+  color: white; /* tagline white */
+}

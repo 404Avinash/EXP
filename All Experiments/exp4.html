@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hotel Room Booking Form</title>
+  <style>
+    /* page basics */
+    body {
+      background: #fff;
+      font-family: "Times New Roman", Georgia, serif;
+      margin: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* outer framed box like the screenshot */
+    .card {
+      border: 3px solid #000;
+      padding: 28px 36px;
+      width: 460px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: 34px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    /* grid for label + input alignment */
+    .row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      align-items: center;
+      gap: 10px 12px;
+      margin-bottom: 12px;
+    }
+
+    label {
+      text-align: right;
+      font-size: 15px;
+      padding-right: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 6px 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+      border: 1px solid #777;
+    }
+
+    textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    /* center the special-requests label above textarea */
+    .row.full {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+    .row.full label {
+      text-align: center;
+      margin-bottom: 6px;
+      padding-right: 0;
+    }
+    .row.full .control { width: 100%; }
+
+    /* buttons */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    button {
+      padding: 6px 12px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    /* small input look like screenshot: narrow text fields */
+    .small-input { max-width: 160px; }
+
+    /* subtle accessibility */
+    label[for] { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="card" role="form" aria-labelledby="form-title">
+    <h1 id="form-title">Hotel Room Booking Form</h1>
+
+    <form action="#" method="post" autocomplete="on">
+      <div class="row">
+        <label for="fullname">Full Name:</label>
+        <div class="control"><input id="fullname" name="fullname" type="text" placeholder="Your full name" required></div>
+      </div>
+
+      <div class="row">
+        <label for="email">Email:</label>
+        <div class="control"><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
+      </div>
+
+      <div class="row">
+        <label for="phone">Phone:</label>
+        <div class="control"><input id="phone" name="phone" type="tel" placeholder="+91 98765 43210"></div>
+      </div>
+
+      <div class="row">
+        <label for="checkin">Check-in Date:</label>
+        <div class="control"><input id="checkin" name="checkin" type="date" required></div>
+      </div>
+
+      <div class="row">
+        <label for="checkout">Check-out Date:</label>
+        <div class="control"><input id="checkout" name="checkout" type="date" required></div>
+      </div>
+
+      <div class="row">
+        <label for="roomtype">Room Type:</label>
+        <div class="control">
+          <select id="roomtype" name="roomtype">
+            <option>Single Room</option>
+            <option>Double Room</option>
+            <option>Deluxe</option>
+            <option>Suite</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="guests">Number of Guests:</label>
+        <div class="control"><input id="guests" name="guests" type="number" min="1" max="10" value="1" class="small-input"></div>
+      </div>
+
+      <div class="row full">
+        <label for="requests">Special Requests:</label>
+        <div class="control"><textarea id="requests" name="requests" placeholder="Any special requests (e.g., late check-in, extra bed)"></textarea></div>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Book Now</button>
+        <button type="reset">Reset Form</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

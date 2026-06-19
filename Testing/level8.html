@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Navbar</title>
+
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* logo left, menu right */
+            align-items: center;            /* vertically centered */
+            background-color: #2196f3;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;         /* spacing between menu items */
+            list-style: none;   /* remove bullets */
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MySite</div>
+
+        <ul class="menu">
+            <li>Home</li>
+            <li>About</li>
+            <li>Courses</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+</body>
+</html>
