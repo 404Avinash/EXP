@@ -2,37 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the Void</title>
-    <meta name="description" content="A simple yet stunning homepage.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Simple Interest Calculator</title>
 </head>
 <body>
-    <main class="container">
-        <div class="content-wrapper">
-            <h1 class="hero-title">Hello, <span class="gradient-text">Explorer</span></h1>
-            <p class="hero-subtitle">You've reached the digital playground of <strong>404Avinash</strong>.</p>
-            
-            <div class="card-grid">
-                <div class="card">
-                    <h2>🚀 Innovation</h2>
-                    <p>Building the future, one line of code at a time.</p>
-                </div>
-                <div class="card">
-                    <h2>🎨 Creativity</h2>
-                    <p>Where logic meets digital art and aesthetics.</p>
-                </div>
-                <div class="card">
-                    <h2>⚡ Performance</h2>
-                    <p>Optimized for speed, efficiency, and scale.</p>
-                </div>
-            </div>
+    <h1>Simple Interest Calculator</h1>
+    
+    <label>Principal: </label>
+    <input type="number" id="principal" step="0.01">
+    <br><br>
+    
+    <label>Rate (%) per Annum: </label>
+    <input type="number" id="rate" step="0.01">
+    <br><br>
+    
+    <label>Time (years): </label>
+    <input type="number" id="time" step="0.01">
+    <br><br>
+    
+    <button onclick="calculateSI()">Calculate</button>
+    <br><br>
+    
+    <div id="result"></div>
 
-            <button class="cta-button" onclick="alert('Welcome!')">Get Started</button>
-        </div>
-    </main>
+    <script>
+        function calculateSI() {
+            const p = parseFloat(document.getElementById('principal').value);
+            const r = parseFloat(document.getElementById('rate').value);
+            const t = parseFloat(document.getElementById('time').value);
+
+            if (!p || !r || !t) {
+                document.getElementById('result').textContent = 'Please fill all fields';
+                return;
+            }
+
+            const si = (p * r * t) / 100;
+            const amount = p + si;
+
+            document.getElementById('result').innerHTML = 
+                `SI: ${si.toFixed(2)}<br>Total Amount: ${amount.toFixed(2)}`;
+        }
+
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keypress', e => e.key === 'Enter' && calculateSI());
+        });
+    </script>
 </body>
 </html>
